@@ -1,8 +1,7 @@
 <!DOCTYPE HTML>
 <html lang="en" class="sidebar-visible no-js light">
 
-<!-- Mirrored from whitepaper.nois.network/our_approach.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Dec 2022 16:43:04 GMT -->
-<!-- Added by HTTrack -->
+
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
@@ -142,12 +141,9 @@
                     <a href="print.html" title="Print this book" aria-label="Print this book">
                         <i id="print-button" class="fa fa-print"></i>
                     </a>
-                    <a href="https://github.com/noislabs/whitepaper" title="Git repository" aria-label="Git repository">
+                    <a href="https://github.com/Noir-Network/WhitePaper_network" title="Git repository"
+                        aria-label="Git repository">
                         <i id="git-repository-button" class="fa fa-github"></i>
-                    </a>
-                    <a href="https://github.com/noislabs/whitepaper/edit/main/src/our_approach.md"
-                        title="Suggest an edit" aria-label="Suggest an edit">
-                        <i id="git-edit-button" class="fa fa-edit"></i>
                     </a>
                 </div>
             </div>
@@ -183,8 +179,21 @@
                         as a collection of smart contracts and offchain bots). This design decision
                         makes it really easy for developers to use our technology since randomness can
                         be consumed onchain only via the usage of a simple library.</p>
-                    <p>Tendermint-based blockchains do not require or supply randomization at the block production layer, in contrast to other consensus methods. Consequently, for our initial iteration, we are totally constructing our stack at the chain's application level (i.e., as a collection of smart contracts and off-chain bots). Because of this design choice, randomness can only be consumed on chain through the use of a simple library, making it incredibly simple for developers to use our technology.     Noir will employ random beacons created by the random network in its initial implementation. This network is supported by a group of players who use multi-party computation to generate unpredictability. There is a bijective mapping between the random round and the wall clock time because each unpredictability is tied to a round and provided periodically. The randomness is based on a BLS threshold signature structure, which generates numbers that are unpredictable and cannot be changed by any of the participants in the randomness. The [Legue of Entropy]<a href="https://en.wikipedia.org/wiki/League_of_entropy"> loe</a>, which created the dread mainnet, has been using it in production for more than two years. For instance, Filecoin uses drand for its storage proofs and block generation. </p>
-                    
+                    <p>Tendermint-based blockchains do not require or supply randomization at the block production
+                        layer, in contrast to other consensus methods. Consequently, for our initial iteration, we are
+                        totally constructing our stack at the chain's application level (i.e., as a collection of smart
+                        contracts and off-chain bots). Because of this design choice, randomness can only be consumed on
+                        chain through the use of a simple library, making it incredibly simple for developers to use our
+                        technology. Noir will employ random beacons created by the random network in its initial
+                        implementation. This network is supported by a group of players who use multi-party computation
+                        to generate unpredictability. There is a bijective mapping between the random round and the wall
+                        clock time because each unpredictability is tied to a round and provided periodically. The
+                        randomness is based on a BLS threshold signature structure, which generates numbers that are
+                        unpredictable and cannot be changed by any of the participants in the randomness. The [Legue of
+                        Entropy]<a href="https://en.wikipedia.org/wiki/League_of_entropy"> loe</a>, which created the
+                        dread mainnet, has been using it in production for more than two years. For instance, Filecoin
+                        uses drand for its storage proofs and block generation. </p>
+
                     <p>The next step in the evolution is to make drand beacons easily accessible by as many dapps as
                         possible in a way that is easy to use and affordable. In an ideal world, a dapp developer would
                         just do something like this:</p>
@@ -198,7 +207,11 @@ let double_dice = dice1 + dice2;
 <span class="boring">}
 </span></code></pre>
                     </pre>
-                    <p>In an ecosystem that is getting ready for thousands of separate and connected blockchains, we think the burden of draconian verification implementation once per contract or even once per blockchain is excessive. The Noir chain, which is accessible via IBC, serves as the randomness layer in the Ethereum ecosystem rather than carrying out the random verification on the dapp's chain.    </p>
+                    <p>In an ecosystem that is getting ready for thousands of separate and connected blockchains, we
+                        think the burden of draconian verification implementation once per contract or even once per
+                        blockchain is excessive. The Noir chain, which is accessible via IBC, serves as the randomness
+                        layer in the Ethereum ecosystem rather than carrying out the random verification on the dapp's
+                        chain. </p>
                     <h2 id="architecture"><a class="header" href="#architecture">Architecture</a></h2>
                     <p><img src="img/diagram.png" alt="Diagram" title="Diagram" />
                         Multiple actors are involved in the Noir system:</p>
@@ -219,7 +232,8 @@ let double_dice = dice1 + dice2;
                     <h2 id="workflow"><a class="header" href="#workflow">Workflow</a></h2>
                     <p>The following steps are taken to get the randomness:</p>
                     <ol>
-                        <li>A contract on a EthereumWasm-enabled chain sends a message to a Noir proxy contract on the same
+                        <li>A contract on a EthereumWasm-enabled chain sends a message to a Noir proxy contract on the
+                            same
                             chain.</li>
                         <li>The proxy contract sends an IBC message to its counter-part on the Noir Network, where the
                             job is put in the queue.</li>
@@ -272,7 +286,5 @@ let double_dice = dice1 + dice2;
 
     <!-- Custom JS scripts -->
 </body>
-
-<!-- Mirrored from whitepaper.nois.network/our_approach.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 03 Dec 2022 16:43:04 GMT -->
 
 </html>
